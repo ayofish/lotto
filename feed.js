@@ -36,8 +36,12 @@ function twittlerInit() {
 
     $('.newtweets').on('click', updateTweets);
     //start the app, call update tweets function
-    window.setTimeout(updateTweets, 1500);
+    // function loadTweets(){
+    //   updateTweets();
+    //   window.setTimeout(loadTweets, 1500);
+    // }
     updateTweets();
+    
 }
 
 $(document).ready(twittlerInit);
