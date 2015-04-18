@@ -47,6 +47,9 @@ function twittlerInit(){
             }
         }
     });
+
+    //start the app, call update tweets function
+    updateTweets();
 }
 
 $(document).ready(twittlerInit);
