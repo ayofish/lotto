@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-4">
+        <h4>Income</h4>
+        <form class="">
+            <fieldset>
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="">
+                        <input id="amount" name="amount" placeholder="Amount" type="number" class="form-control input-md" ng-model="income.amount" money>
+                        <!-- <span class="help-block">Expense Amount</span>   -->
+                    </div>
+                </div>
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <div class="">
+                        <label class="control-label" for="category">Category</label>
+                        <select id="category" name="category" class="form-control">
+                            <option value="food">Food</option>
+                            <option value="utilities">Utilities</option>
+                            <option value="car">Car</option>
+                            <option value="other">other</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="">
+                        <p class="input-group">
+                            <input placeholder="Date" type="text" class="form-control input-md" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+                        </p>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="">
+                        <input id="memo" name="memo" type="text" placeholder="Memo" class="form-control input-md">
+                        <!-- <span class="help-block">Memo</span> -->
+                    </div>
+                </div>
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <div class="">
+                        <button id="save" name="save" class="btn btn-success">Save</button>
+                        <button id="delete" name="delete" class="btn btn-danger">Delete</button>
+                        <button id="copy" name="copy" class="btn btn-info">Copy</button>
+                        <button id="cancel" name="cancel" class="btn btn-primary">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
