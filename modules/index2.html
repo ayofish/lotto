@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   	<title>AngularJS Tutorials</title>
+ 	
+ </head>
+ <body>
+
+	<div ng-app="myApp">
+		<div>
+		  {{ 'World' | greet}}
+		</div>
+	</div>
+	
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
+   <script type="text/javascript">
+  	'use strict';
+	// declare a module
+	var myAppModule = angular.module('myApp', []);
+
+	// configure the module.
+	// in this example we will create a greeting filter
+	myAppModule.filter('greet', function() {
+	 return function(name) {
+	    return 'Hello, ' + name + '!';
+	  };
+	});
+   </script>
+ </body>
+</html>

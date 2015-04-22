@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   	<title>AngularJS Tutorials</title>
+ 	
+ </head>
+ <body>
+ 	<div ng-app="App">
+ 		<superman></superman>
+ 	</div>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
+   <script type="text/javascript">
+   		var App = angular.module('App', []);
+   		App.factory('Data', function(){
+   			return 'my name is clark';
+   		});
+   		App.directive('superman', ['Data', function(Data){
+   			return {
+   				restrict: 'E',
+   				template: '<div>Superman is here ' + Data + '</div>'
+   			}
+   		}]);
+   </script>
+ </body>
+</html>
