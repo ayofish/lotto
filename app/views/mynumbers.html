@@ -1,0 +1,18 @@
+<div class="well">
+    <form role="form" class="form-inline">
+        <h3>My Numbers</h3>
+
+        <button class="btn btn-primary" ng-click="addNumberSet($event)">Add Numbers To Check</button>
+        <fieldset ng-repeat="numberset in numbers.mynumbers track by $index">
+            <legend>{{$index + 1}}</legend>
+            <div class="form-group">
+                <div class="col-md-1" ng-repeat="number in numberset">
+                    <input type="number" ng-model="number.val" ng-class="{win: number.win == true}">
+                </div>
+            </div>
+        </fieldset>
+        <br/>
+        <button class="btn btn-primary" ng-click="checkMyNumbers($event)">Am I a millionaire?</button>
+        
+    </form>
+</div>
