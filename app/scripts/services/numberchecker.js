@@ -8,8 +8,7 @@
  * Service in the lottoApp.
  */
 angular.module('lottoApp')
-    .service('NumberChecker', function() {
-        
+    .service('NumberChecker', ["LottoNumber", function(LottoNumber) {
         this.arrNumbers = null;
         this.arrNumbersToCheck = null;
         this.setNumbers = function(arrNumbers) {
@@ -28,14 +27,14 @@ angular.module('lottoApp')
             var results = new Array();
             if (this.arrNumbersToCheck != null && this.arrNumbers != null) {
                 /*var arr = this.arrNumbers.concat(this.arrNumbersToCheck);
-			var sorted_arr = arr.sort();
-			for (var i = 0; i < arr.length - 1; i++) {
-			    if (sorted_arr[i + 1] == sorted_arr[i]) {
-			        results.push(sorted_arr[i]);
-			    }
-			}*/
+            var sorted_arr = arr.sort();
+            for (var i = 0; i < arr.length - 1; i++) {
+                if (sorted_arr[i + 1] == sorted_arr[i]) {
+                    results.push(sorted_arr[i]);
+                }
+            }*/
                 results = _.intersection(this.arrNumbersToCheck, this.arrNumbers).sort();
             }
             return results;
         };
-    });
+    }]);

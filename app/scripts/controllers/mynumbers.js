@@ -8,7 +8,7 @@
  * Controller of the lottoApp
  */
 angular.module('lottoApp')
-    .controller('MynumbersCtrl', ['$scope', 'NumberChecker', function($scope, numberChecker) {
+    .controller('MynumbersCtrl', ['$scope', 'NumberChecker', function($scope, NumberChecker) {
         $scope.numbers = {
             winning: [{
                 val: null
@@ -38,10 +38,10 @@ angular.module('lottoApp')
         var checkMyNumbers = function() {
             for (var i = 0; i < $scope.numbers.mynumbers.length; i++) {
                 for (var x = 0; x < $scope.numbers.mynumbers[i].length; x++) {
-                    numberChecker.setNumbersToCheck(_.map($scope.numbers.mynumbers[i], function(obj) {
+                    NumberChecker.setNumbersToCheck(_.map($scope.numbers.mynumbers[i], function(obj) {
                         return obj.val;
                     }));
-                    var matching = numberChecker.getMatching();
+                    var matching = NumberChecker.getMatching();
                     for (var z = 0; z < $scope.numbers.mynumbers[i].length; z++) {
                         if (matching.indexOf($scope.numbers.mynumbers[i][z].val) != -1) {
                             $scope.numbers.mynumbers[i][z].win = true;

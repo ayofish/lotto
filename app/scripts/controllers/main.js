@@ -8,7 +8,7 @@
  * Controller of the lottoApp
  */
 angular.module('lottoApp')
-    .controller('MainCtrl', ['$scope', '$location', 'NumberChecker', function($scope, $location, numberChecker) {
+    .controller('MainCtrl', ['$scope', '$location', 'NumberChecker', function($scope, $location, NumberChecker) {
         $scope.numbers = {
             winning: [{
                 val: null
@@ -29,7 +29,7 @@ angular.module('lottoApp')
             numMynumbers: 6
         };
         $scope.submitWinningNumbers = function($event){
-        	numberChecker.setNumbers(_.map($scope.numbers.winning, function(obj){return obj.val;}));
+        	NumberChecker.setNumbers(_.map($scope.numbers.winning, function(obj){return obj.val;}));
         	$location.path('mynumbers');
         };
         $scope.awesomeThings = [
