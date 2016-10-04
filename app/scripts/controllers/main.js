@@ -9,33 +9,22 @@
  */
 angular.module('lottoApp')
     .controller('MainCtrl', ['$scope', '$location', 'NumberChecker', function($scope, $location, NumberChecker) {
-        $scope.numbers = {
-            winning: [{
-                val: null
-            }, {
-                val: null
-            }, {
-                val: null
-            }, {
-                val: null
-            }, {
-                val: null
-            }, {
-                val: null
-            }],
-            mynumbers: [
-            	[]
-            ],
-            numMynumbers: 6
+        $scope.entries = [{
+            count: 6,
+            numbers: []
+        }];
+        $scope.winningNumbers = {
+            count: 6,
+            numbers: []
         };
-        $scope.submitWinningNumbers = function($event){
-        	NumberChecker.setNumbers(_.map($scope.numbers.winning, function(obj){return obj.val;}));
-        	$location.path('mynumbers');
+        $scope.submitWinningNumbers = function($event) {
+            NumberChecker.setNumbers(_.map($scope.entries.numbers, function(obj) {
+                return obj.val;
+            }));
+            $location.path('mynumbers');
         };
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
 
+        $scope.removeEntry = function(index){
+            debugger;
+        };
     }]);

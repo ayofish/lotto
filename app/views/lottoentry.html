@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <div class="btn-toolbar pull-left" role="toolbar">
+            <div class=""><h3>{{heading}}</h3></div>
+            <div class="btn-group pull-left" role="group">
+                <button type="button" class="btn btn-default" ng-click="onClickLottoEntryNumberCount(6)">6</button>
+                <button type="button" class="btn btn-default" ng-click="onClickLottoEntryNumberCount(7)">7</button>
+                <button type="button" class="btn btn-default" ng-click="onClickLottoEntryNumberCount(8)">8</button>
+                <button type="button" class="btn btn-default" ng-click="onClickLottoEntryNumberCount(9)">9</button>
+                <button type="button" class="btn btn-default" ng-click="onClickLottoEntryNumberCount(10)">10</button>
+                <button type="button" class="btn btn-default" ng-click="onClickLottoEntryNumberCount(11)">11</button>
+                <button type="button" class="btn btn-default" ng-click="onClickLottoEntryNumberCount(12)">12</button>
+            </div>
+        </div>
+        <div class="pull-right">
+            <button href="#" class="btn btn-default btn-sm" title="clear" ng-click="onClickClearNumbers()"><i class="glyphicon glyphicon-refresh"></i></button>
+            <button ng-hide="hideclose" href="#" class="btn btn-default btn-sm" title="remove" ng-click="onClickRemoveNumbers()"><i class="glyphicon glyphicon-minus"></i></button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row-fluid">
+            <div class="col-xs-1 col-md-1 col-lg-1" ng-repeat="number in entry.numbers">
+                <input type="number" ng-model="number.val" class="form-control" min="1" max="58" ng-class="{win: number.win == true}" />
+            </div>
+        </div>
+    </div>
+</div>

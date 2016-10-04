@@ -1,13 +1,9 @@
 <div class="well">
-      <form role="form" class="form-inline">
-      <fieldset>
-        <legend>Winning Numbers</legend>
-        <div class="form-group" ng-repeat="number in numbers.winning">
-            <div class="col-md-1">
-                <input type="number" ng-model="number.val" required>
-            </div>
-        </div>
-        <button class="btn btn-primary" ng-click="submitWinningNumbers($event)">Next</button>
-      </fieldset>
-    </form>
+    <section>
+         <lottoentry hideclose="true" heading="Winning Numbers" entry="winningNumbers"></lottoentry>
+    </section>
+    <!-- select the system , number of numbers in lotto entry-->
+    <section ng-repeat="entry in entries track by $index">
+        <lottoentry remove-entry="removeEntry" entry="entry" index="{{$index}}"></lottoentry>
+    </section>
 </div>
